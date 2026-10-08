@@ -1,0 +1,36 @@
+{
+  "benchmark_commit": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f",
+  "expected_blobs": {
+    "domain.pddl": "318a62ce6af284ad44dffe0d8ae9adcb5e7ae6e4",
+    "p09.pddl": "617adcac0379b8e9a5604145102d7b4bda9d5602",
+    "p10.pddl": "1a27a11d69040ef9d301e621c3ac3badf029ca89",
+    "p11.pddl": "93833e252bbe8b54363af8c9c2e4ef5bc602594e",
+    "p12.pddl": "97c99602f7232a533bae04e2ec592544ebb5f44f",
+    "p13.pddl": "21926a78e4302c5b3937fc0b9c97319a2de14282",
+    "p14.pddl": "7c86ab00396273ede9672deb62b55594acda7bb6",
+    "p15.pddl": "0374b52828ae977979c15de9ecb38ef292b29acb",
+    "p16.pddl": "f1fe8d2a72a3117005cb34c1b8996699b4adf4b8",
+    "p17.pddl": "1787c583e9ca15955774a1033d70d364da3d7af7",
+    "p18.pddl": "ab83e3af2a8ffda9ce416134496933967e19656c",
+    "p19.pddl": "bf341b1c24aebcc11be9b110e0ae2774374021f4",
+    "p20.pddl": "dcd1428a53fa7c82a57cced8f794bd560d53b098"
+  },
+  "observed_blobs": {
+    "domain.pddl": "318a62ce6af284ad44dffe0d8ae9adcb5e7ae6e4",
+    "p09.pddl": "617adcac0379b8e9a5604145102d7b4bda9d5602",
+    "p10.pddl": "1a27a11d69040ef9d301e621c3ac3badf029ca89",
+    "p11.pddl": "93833e252bbe8b54363af8c9c2e4ef5bc602594e",
+    "p12.pddl": "97c99602f7232a533bae04e2ec592544ebb5f44f",
+    "p13.pddl": "21926a78e4302c5b3937fc0b9c97319a2de14282",
+    "p14.pddl": "7c86ab00396273ede9672deb62b55594acda7bb6",
+    "p15.pddl": "0374b52828ae977979c15de9ecb38ef292b29acb",
+    "p16.pddl": "f1fe8d2a72a3117005cb34c1b8996699b4adf4b8",
+    "p17.pddl": "1787c583e9ca15955774a1033d70d364da3d7af7",
+    "p18.pddl": "ab83e3af2a8ffda9ce416134496933967e19656c",
+    "p19.pddl": "bf341b1c24aebcc11be9b110e0ae2774374021f4",
+    "p20.pddl": "dcd1428a53fa7c82a57cced8f794bd560d53b098"
+  },
+  "mismatches": [],
+  "fast_downward_version_frozen": "26.6",
+  "val_commit_frozen": "3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4"
+}
