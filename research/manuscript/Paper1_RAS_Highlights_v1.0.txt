@@ -1,0 +1,5 @@
+Governed Semantic Compilation creates mission-conditioned Provider–Action planning domains.
+Same-cardinality controls show that semantic action selection matters beyond domain size.
+A frozen Rovers gate passes with Fast Downward 26.6 and independent VAL validation.
+Fast Downward removes the same irrelevant structure in the holdout, eliminating search gains.
+Computational benefit is conditional; the primary contribution is auditable domain admission.
