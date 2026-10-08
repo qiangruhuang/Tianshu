@@ -2,9 +2,9 @@
 
 > **Paper 1:** Governed Semantic Domain Compilation for Heterogeneous Autonomous Mission Planning  
 > **Repository:** `https://github.com/qiangruhuang/Tianshu`  
-> **Master version:** v1.7.1  
+> **Master version:** v1.7.2  
 > **Last updated:** 2026-10-08  
-> **Current phase:** RAS submission preparation; experimental program closed  
+> **Current phase:** RAS submission engineering complete; author metadata / final portal packaging pending  
 > **Current full manuscript:** `Paper1_Manuscript_v0.5.3_RAS.md`  
 > **Role:** single source of truth for research status, claim boundaries, reproducibility, and submission state.
 
@@ -271,7 +271,9 @@ Main figure sequence is frozen:
 
 Current generator:
 
-- `research/figures/generate_paper_figures_v1_1.py`
+- `research/figures/generate_paper_figures_v1_2.py`
+
+Submission figure sources are generated as PNG previews plus **PDF/EPS vector files** and have passed render-back visual inspection.
 
 Figure philosophy: mechanism → public topology → external semantics → mature-planner boundary. The mature-planner null stays in the main paper.
 
@@ -316,10 +318,11 @@ Submission work remaining:
 4. CRediT author contributions;
 5. competing-interest declaration;
 6. optional acknowledgements;
-7. final copy edit and reference-style normalization;
-8. final figure typography/layout check;
-9. decide whether to mint a repository release/DOI before submission;
-10. explicitly approve content before DOCX/PDF generation.
+7. decide whether to mint a repository release/DOI before submission;
+8. perform the final live RAS portal requirement check;
+9. explicitly approve content before DOCX/PDF manuscript generation.
+
+Reference punctuation/house-style normalization is not a hard blocker under Elsevier's current Your Paper Your Way guidance; figure source-format compliance is complete with EPS/PDF outputs.
 
 ---
 
@@ -330,6 +333,15 @@ All evidence remains software/formal-model, parameterized synthetic, or public p
 ---
 
 # 13. Changelog
+
+## v1.7.2 — 2026-10-08
+
+- Completed RAS/Elsevier submission-compliance gate: PASS with author-metadata blockers only.
+- Downgraded reference house-style normalization from pre-submission blocker to live-portal/proof-stage check under Your Paper Your Way.
+- Upgraded figure generator to v1.2 with PNG preview + PDF/EPS vector outputs.
+- Rendered all five PDF figures back to images and visually verified them.
+- Added submission checklist v1.1.
+- Current remaining blockers are author/funding/CRediT/COI metadata, optional repository release/DOI, and final live portal packaging.
 
 ## v1.7.1 — 2026-10-08
 
