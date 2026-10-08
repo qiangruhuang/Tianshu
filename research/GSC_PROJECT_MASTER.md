@@ -2,10 +2,10 @@
 
 > **Paper 1:** Governed Semantic Domain Compilation for Heterogeneous Autonomous Mission Planning  
 > **Repository:** `https://github.com/qiangruhuang/Tianshu`  
-> **Master version:** v1.7  
+> **Master version:** v1.7.1  
 > **Last updated:** 2026-10-08  
 > **Current phase:** RAS submission preparation; experimental program closed  
-> **Current full manuscript:** `Paper1_Manuscript_v0.5.2_RAS.md`  
+> **Current full manuscript:** `Paper1_Manuscript_v0.5.3_RAS.md`  
 > **Role:** single source of truth for research status, claim boundaries, reproducibility, and submission state.
 
 ---
@@ -224,18 +224,19 @@ Interpretation: Fast Downward translation/relevance preprocessing removes the sa
 
 Current authoritative full manuscript:
 
-- `Paper1_Manuscript_v0.5.2_RAS.md`
-- Library: `/Tianshu/manuscript/Paper1_Manuscript_v0.5.2_RAS.md`
-- SHA-256: `031a556ea205d7cb54b2361e49380c5782330d33cb86410ba12610999d9f6253`
+- `Paper1_Manuscript_v0.5.3_RAS.md`
+- Library: `/Tianshu/manuscript/Paper1_Manuscript_v0.5.3_RAS.md`
+- SHA-256: `3fa988a466c38f716c7ade29f1ecea01c9710a897b073b92831df4888e095f2f`
 
 RAS-facing state:
 
-- abstract: **235 words**;
+- abstract: **236 words**;
 - keywords: **7**;
 - highlights: **5**, each **70–79 characters**, satisfying Elsevier's ≤85-character general highlight guidance;
 - current references: 19, all used in text and no missing citation numbers;
 - final 2026 literature refresh complete;
 - adversarial review complete: **no new experiment required**;
+- pre-layout copy-edit gate: **PASS**;
 - Data/Code Availability statement complete;
 - submission metadata package complete;
 - cover letter draft complete;
@@ -246,6 +247,8 @@ GitHub manuscript assets:
 
 - `research/manuscript/Paper1_CURRENT_v1.0.md`
 - `research/manuscript/Paper1_v0.5.2_RAS_Compliance_Delta.md`
+- `research/manuscript/Paper1_v0.5.3_Copyedit_Delta.md`
+- `research/manuscript/Paper1_RAS_Copyedit_Gate_v1.0.md`
 - `research/manuscript/Paper1_RAS_Submission_Metadata_v1.0.md`
 - `research/manuscript/Paper1_Data_Code_Availability_v1.0.md`
 - `research/manuscript/Paper1_RAS_Highlights_v1.1.txt`
@@ -327,6 +330,14 @@ All evidence remains software/formal-model, parameterized synthetic, or public p
 ---
 
 # 13. Changelog
+
+## v1.7.1 — 2026-10-08
+
+- Promoted v0.5.3 RAS to authoritative pre-layout candidate.
+- Copy-edit gate PASS: no scientific or structural rewrite required.
+- Standardized E6b as confirmatory external-validity gate and cross-implementation admission oracle.
+- Integrated the isolated Figure 1 callout; no method/result/claim changes.
+- Updated authoritative manuscript SHA-256 and Abstract count to 236 words.
 
 ## v1.7 — 2026-10-08
 
