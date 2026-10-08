@@ -1,0 +1,13 @@
+instance,full_solved,gsc_solved,full_timeout,gsc_timeout,full_returncode,gsc_returncode,full_wall_s,gsc_wall_s,full_expansions,gsc_expansions,full_generated,gsc_generated,full_plan_length,gsc_plan_length,gsc_val_valid,nonadmitted_action_exposures,admitted_rovers,total_rovers,admitted_cameras,total_cameras,admitted_stores,total_stores
+p09.pddl,True,True,False,False,0,0,0.171435,0.110404,70,70,1428,1428,36,36,True,0,4,4,5,5,3,4
+p10.pddl,True,True,False,False,0,0,0.121469,0.113777,138,138,3124,3124,39,39,True,0,4,4,6,6,4,4
+p11.pddl,True,True,False,False,0,0,0.111153,0.104434,99,99,2115,2115,36,36,True,0,4,4,3,4,4,4
+p12.pddl,True,True,False,False,0,0,0.10325,0.107923,32,32,664,664,21,21,True,0,4,4,4,4,3,4
+p13.pddl,True,True,False,False,0,0,0.123926,0.132268,239,239,4964,4964,46,46,True,0,4,4,3,5,4,4
+p14.pddl,True,True,False,False,0,0,0.117106,0.118536,110,110,2793,2793,33,33,True,0,4,4,5,5,2,4
+p15.pddl,True,True,False,False,0,0,0.130944,0.122395,408,408,13103,13103,46,46,True,0,4,4,4,4,3,4
+p16.pddl,True,True,False,False,0,0,0.124068,0.126785,250,250,5594,5594,44,44,True,0,4,4,2,4,4,4
+p17.pddl,True,True,False,False,0,0,0.16884,0.166051,127,127,4763,4763,54,54,True,0,6,6,7,7,4,6
+p18.pddl,True,True,False,False,0,0,0.197534,0.20789,152,152,6691,6691,46,46,True,0,6,6,7,7,6,6
+p19.pddl,True,True,False,False,0,0,0.255153,0.251135,499,499,21802,21802,74,74,True,0,6,6,7,7,4,6
+p20.pddl,True,True,False,False,0,0,0.368795,0.370952,746,746,37608,37608,99,99,True,0,8,8,7,7,6,8
