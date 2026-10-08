@@ -1,0 +1,5 @@
+Mission-conditioned compilation governs which provider actions enter planning.
+Same-size controls show semantic selection matters beyond reducing domain size.
+Held-out Rovers tasks preserve solvability and pass separate plan validation.
+A mature planner removes the same irrelevant structure in the holdout.
+Search benefits depend on whether irrelevant structure survives preprocessing.
