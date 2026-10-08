@@ -1,0 +1,20 @@
+{
+  "gate": "E6b Rovers native-semantics confirmatory external-validity gate",
+  "status": "PASS",
+  "frozen_benchmark_commit": "e21d49c2cb61d147a46c5966f2581bf6fd422b9f",
+  "fast_downward_version": "26.6",
+  "val_commit": "3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4",
+  "source_identity_mismatches": 0,
+  "admission_serialization_mismatches": 0,
+  "independent_oracle_mismatches": 0,
+  "uncovered_native_goals": 0,
+  "fast_downward_version_verified": true,
+  "val_source_commit_verified": true,
+  "full_evaluable": 12,
+  "full_solved_to_gsc_unsolved_regressions": 0,
+  "gsc_val_failures": 0,
+  "nonadmitted_action_exposures": 0,
+  "required_min_full_evaluable": 10,
+  "full_evaluable_definition": "Full-domain plan found within frozen resource cap",
+  "performance_metrics_are_secondary": true
+}
