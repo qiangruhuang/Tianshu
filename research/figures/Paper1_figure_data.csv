@@ -1,0 +1,11 @@
+figure,item,value_1,value_2,value_1_definition,value_2_definition
+Fig2,GSC,4,30,A* median generated nodes,blind-search solved count / 30
+Fig2,Random-core,31,20,A* median generated nodes,blind-search solved count / 30
+Fig2,State-aware,308,0,A* median generated nodes,blind-search solved count / 30
+Fig2,Full-domain,612,0,A* median generated nodes,blind-search solved count / 30
+Fig3,Rovers 03,38.5,,E5 q=0 % generated-node reduction,
+Fig3,Rovers 05,45.5,,E5 q=0 % generated-node reduction,
+Fig3,Rovers 07,66.7,,E5 q=0 % generated-node reduction,
+Fig4,Rovers,58,58,admitted objects,total objects
+Fig4,Cameras,60,65,admitted objects,total objects
+Fig4,Stores,47,58,admitted objects,total objects
