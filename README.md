@@ -4,7 +4,7 @@ This repository is the maintained research workspace for **Governed Semantic Dom
 
 ## Current status — 8 October 2026
 
-Paper 1's **experimental program is closed** and the project has entered journal-submission consolidation.
+Paper 1's **experimental program is closed**. Pre-layout copy-edit and RAS/Elsevier submission-engineering gates have both passed; remaining blockers are author metadata and final portal packaging.
 
 - E0–E5: complete.
 - E6a Satellite pilot: complete; retained transparently as a low-selectivity pilot.
@@ -13,7 +13,9 @@ Paper 1's **experimental program is closed** and the project has entered journal
 - Full-domain evaluable: **12/12**; Full-solved→GSC-unsolved: **0**; GSC VAL failures: **0**; non-admitted-provider exposures: **0**.
 - Mature-planner performance result: **null**. Full and GSC have identical effective translated/search problems and identical final plans on all 12 E6b tasks.
 - Primary submission target: **Robotics and Autonomous Systems (RAS)**.
-- Current manuscript: **v0.5.1 RAS**, with terminology/logic audit complete.
+- Current authoritative manuscript: **v0.5.3 RAS**.
+- Pre-layout copy-edit gate: **PASS**.
+- RAS/Elsevier submission-compliance gate: **PASS WITH AUTHOR-METADATA BLOCKERS ONLY**.
 
 Final scientific storyline:
 
@@ -23,19 +25,26 @@ GSC is supported as an explicit, auditable, mission-conditioned Provider–Actio
 
 ## Canonical project files
 
-- [`research/GSC_PROJECT_MASTER.md`](research/GSC_PROJECT_MASTER.md) — single source of truth.
+- [`research/GSC_PROJECT_MASTER.md`](research/GSC_PROJECT_MASTER.md) — single source of truth; current version v1.7.2.
 - [`docs/index.html`](docs/index.html) — maintained browser-oriented research panorama.
-- [`research/E6b_Confirmatory_Interpretation_v1.0.md`](research/E6b_Confirmatory_Interpretation_v1.0.md) — scientific interpretation of E6b.
-- [`research/manuscript/Paper1_Manuscript_v0.4.md`](research/manuscript/Paper1_Manuscript_v0.4.md) — last complete full manuscript committed directly to GitHub.
-- [`research/manuscript/Paper1_v0.5_RAS_Submission_Delta.md`](research/manuscript/Paper1_v0.5_RAS_Submission_Delta.md) — RAS-oriented manuscript delta.
-- [`research/manuscript/Paper1_v0.5.1_RAS_Terminology_Audit.md`](research/manuscript/Paper1_v0.5.1_RAS_Terminology_Audit.md) — final terminology/logic audit.
-- [`research/manuscript/Paper1_Target_Venue_Decision_v1.0.md`](research/manuscript/Paper1_Target_Venue_Decision_v1.0.md) — venue decision.
+- [`research/manuscript/Paper1_CURRENT_v1.0.md`](research/manuscript/Paper1_CURRENT_v1.0.md) — authoritative manuscript version/hash manifest.
+- [`research/manuscript/Paper1_v0.5.3_Copyedit_Delta.md`](research/manuscript/Paper1_v0.5.3_Copyedit_Delta.md) — final pre-layout copy-edit delta.
+- [`research/manuscript/Paper1_RAS_Copyedit_Gate_v1.0.md`](research/manuscript/Paper1_RAS_Copyedit_Gate_v1.0.md) — copy-edit gate.
+- [`research/manuscript/Paper1_RAS_Submission_Compliance_Gate_v1.0.md`](research/manuscript/Paper1_RAS_Submission_Compliance_Gate_v1.0.md) — current RAS/Elsevier format gate.
+- [`research/manuscript/Paper1_Data_Code_Availability_v1.0.md`](research/manuscript/Paper1_Data_Code_Availability_v1.0.md) — data/code statement.
+- [`research/manuscript/Paper1_RAS_Submission_Metadata_v1.0.md`](research/manuscript/Paper1_RAS_Submission_Metadata_v1.0.md) — abstract/keywords/highlights package.
+- [`research/manuscript/Paper1_RAS_Submission_Checklist_v1.1.md`](research/manuscript/Paper1_RAS_Submission_Checklist_v1.1.md) — current checklist.
 - [`research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md`](research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md) — claim/evidence/citation audit.
-- [`research/figures/Paper1_Figure_Table_Package_v1.0.md`](research/figures/Paper1_Figure_Table_Package_v1.0.md) — submission figure/table plan.
-- [`research/figures/generate_paper_figures.py`](research/figures/generate_paper_figures.py) — reproducible figure generator.
+- [`research/figures/generate_paper_figures_v1_2.py`](research/figures/generate_paper_figures_v1_2.py) — reproducible PNG/PDF/EPS main-figure generator.
 - [`e6b/results/run-37713826709/`](e6b/results/run-37713826709/) — primary committed confirmatory result summaries.
 
-The complete current manuscript `Paper1_Manuscript_v0.5.1_RAS.md` and rendered figure package are also maintained in the project Library.
+The complete current manuscript is maintained in the project Library at:
+
+`/Tianshu/manuscript/Paper1_Manuscript_v0.5.3_RAS.md`
+
+SHA-256:
+
+`3fa988a466c38f716c7ade29f1ecea01c9710a897b073b92831df4888e095f2f`
 
 ## E6b confirmatory identity
 
@@ -50,24 +59,35 @@ The complete current manuscript `Paper1_Manuscript_v0.5.1_RAS.md` and rendered f
 
 Completed:
 
-- RAS-oriented ~260-word abstract;
-- RAS-oriented Introduction;
-- five frozen main figures and reproducible generation script;
+- v0.5.3 RAS pre-layout manuscript candidate;
+- 236-word standalone abstract;
+- seven keywords;
+- five Highlights, each within Elsevier's general 85-character guidance;
+- five frozen main figures;
+- PNG previews plus PDF/EPS vector submission sources;
+- render-back visual verification of all five PDF figures;
 - final 2026 literature refresh;
 - Claim–Evidence–Citation audit;
+- adversarial review;
 - terminology/logic audit;
-- Highlights draft;
+- pre-layout copy-edit gate;
+- Data/Code Availability statement;
 - cover-letter draft;
 - graphical-abstract brief;
-- submission checklist.
+- RAS/Elsevier submission-compliance gate;
+- submission checklist v1.1.
 
-Remaining work is presentation/metadata only:
+Remaining work is author/submission metadata only:
 
-1. final full-manuscript copy edit;
-2. final figure typography/layout check;
-3. normalize references against the current RAS submission portal/Guide;
-4. add authors, affiliations, funding, COI, and CRediT;
-5. generate DOCX/PDF only after explicit manuscript-content approval.
+1. author order and affiliations;
+2. corresponding-author details;
+3. funding/grant statement;
+4. CRediT contributions;
+5. competing-interest declaration;
+6. acknowledgements if applicable;
+7. optional repository release/DOI decision;
+8. final live RAS portal requirement check;
+9. DOCX/PDF manuscript generation only after explicit content approval.
 
 A new experiment is justified only if a later reviewer identifies a concrete claim that cannot be supported or removed using the existing evidence.
 
