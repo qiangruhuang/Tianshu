@@ -1,32 +1,36 @@
 # Governed Semantic Compilation (GSC) — Project Master
 
 > **Paper 1:** Governed Semantic Domain Compilation for Heterogeneous Autonomous Mission Planning  
-> **Repository:** `qiangruhuang/Tianshu`  
-> **Master version:** v1.6  
+> **Repository:** `https://github.com/qiangruhuang/Tianshu`  
+> **Master version:** v1.7  
 > **Last updated:** 2026-10-08  
-> **Current phase:** experimental program closed; manuscript/figures/citation consolidation  
-> **Role:** single source of truth for research state, claim boundaries, reproducibility, and next actions.
-
-## 0. Maintenance contract
-
-1. Update this Markdown first, then synchronize `docs/index.html`.
-2. Never silently reinterpret completed experiments.
-3. Preserve null/negative results when they define the claim boundary.
-4. Frozen protocols may change only through an explicit new version.
-5. A CI failure is not a scientific FAIL; a scientific status must come from the frozen gate.
-6. Do not add a benchmark merely to recover a preferred effect direction.
-7. DOCX/PDF remain outside the research phase until manuscript content is explicitly approved.
+> **Current phase:** RAS submission preparation; experimental program closed  
+> **Current full manuscript:** `Paper1_Manuscript_v0.5.2_RAS.md`  
+> **Role:** single source of truth for research status, claim boundaries, reproducibility, and submission state.
 
 ---
 
-# 1. Research question
+## 0. Maintenance contract
 
-**When a system knows many possible providers and actions, which provider–action instances should be admitted into the planner for this mission, under the current state and policy, before search begins?**
+1. Update this Master first, then synchronize `docs/index.html`.
+2. Never silently reinterpret a completed experiment.
+3. Preserve null/negative results when they define the claim boundary.
+4. Frozen protocols change only through an explicit new version.
+5. CI/infrastructure status is distinct from scientific PASS/FAIL/INCONCLUSIVE.
+6. Do not add a benchmark merely to recover a preferred effect direction.
+7. The Paper 1 experimental program is closed unless a later reviewer identifies a concrete claim–evidence gap that cannot be removed or supported using existing evidence.
+8. DOCX/PDF generation remains outside the research phase until manuscript content is explicitly approved.
 
-Persistent semantic knowledge can legitimately contain reusable capabilities, multiple providers, general action templates, stable policy, and incomplete/open-world knowledge. A planner needs a bounded current problem. GSC therefore treats **mission-conditioned Provider–Action domain membership** as an explicit governance artifact between persistent semantics and planner search.
+---
+
+# 1. Research question and final storyline
+
+**Research question:** when a system knows many possible providers and actions, which Provider–Action instances should be admitted into the planner for this mission, under the current state and policy, before search begins?
+
+GSC treats **mission-conditioned Provider–Action domain membership** as an explicit governance artifact between persistent semantic knowledge and planner search:
 
 ```text
-Persistent semantic model + mission + current operational state
+Persistent semantics + mission + current operational state
                          ↓
                 Mission Snapshot
                          ↓
@@ -42,6 +46,12 @@ Persistent semantic model + mission + current operational state
                     Validator
 ```
 
+**Final storyline:**
+
+> **correct governed domain synthesis + conditional computational benefit**
+
+GSC is not claimed as a new search algorithm, a generic ontology-to-PDDL contribution, or a universal planning-speedup method.
+
 ---
 
 # 2. Final claim boundary
@@ -49,12 +59,12 @@ Persistent semantic model + mission + current operational state
 ## Supported
 
 1. Mission-conditioned Provider–Action admission is implementable as a separate planning boundary.
-2. In the controlled E1 benchmark, semantically coherent action selection reduces search pollution beyond the trivial effect of selecting fewer actions.
-3. Readiness, compile-time safety admission, freshness binding, post-plan validation, and rejection provenance are separable load-bearing mechanisms.
-4. The same generic runtime core transfers without a domain-specific branch from the C-UAS fixture to a five-phase SAR/inspection configuration.
-5. E5 shows that the controlled search-pollution direction can survive public planning topology when governance-invalid alternatives remain in the effective search representation.
-6. **E6b passes the frozen independent external-validity gate** on held-out public native semantics with a cross-implementation oracle, Fast Downward 26.6, and VAL.
-7. E6b supports semantic soundness, solvability preservation, non-admitted-provider exclusion, and external planner/validator independence on the frozen Rovers holdout.
+2. E1 shows that semantically coherent action selection reduces search pollution beyond the trivial effect of selecting fewer actions under the controlled benchmark.
+3. E3 shows that Readiness, compile-time safety admission, freshness, validation, and rejection provenance have separable roles.
+4. E4 transfers the unchanged generic runtime core from the original C-UAS fixture to a five-phase SAR/inspection configuration without a domain-specific runtime branch.
+5. E5 shows that the controlled search-pollution direction can survive public planning topology when governance-invalid alternatives remain in the effective planner representation.
+6. **E6b passes the frozen confirmatory external-validity gate** on held-out public native semantics using a cross-implementation admission oracle, Fast Downward 26.6, and VAL.
+7. E6b supports solvability preservation, returned-plan validity, non-admitted-provider exclusion, and external planner/validator independence on the frozen Rovers holdout.
 
 ## Not supported
 
@@ -67,41 +77,37 @@ Persistent semantic model + mission + current operational state
 - optimal freshness/revalidation;
 - independently authored field safety/authorization labels for E6b.
 
-**Final storyline:**
-
-> **correct governed domain synthesis + conditional computational benefit**
-
 ---
 
-# 3. Evaluation architecture
+# 3. Evidence chain
 
-| Experiment | Question | Evidence | Final status |
-|---|---|---|---|
-| E0 | Frozen prototype reproducibility | regression anchor | **Complete** |
-| E1 | Is semantic selection better than weaker/same-size alternatives for the right reason? | 12,600 controlled evaluations | **Complete** |
-| E2 | Do current-state changes truthfully change domain/plan behavior? | deterministic state perturbations | **Complete** |
-| E3 | Which governance components are load-bearing? | 5,400 ablation trials | **Complete** |
-| E4 | Does the same runtime core transfer beyond the original configuration? | configuration-only five-phase transfer | **Complete** |
-| E5 | Does the search-pollution effect survive public planning topology? | IPC-3 Rovers topology stress test | **Complete** |
-| E6a | Is Satellite suitable as a native-semantic confirmatory gate? | external pilot | **Complete pilot; insufficient selectivity** |
-| E6b | Does frozen admission preserve native public semantics with independent implementation/planner/validator paths? | confirmatory external-validity gate | **PASS — run 37713826709** |
+| Experiment | Evidence | Final status |
+|---|---|---|
+| E0 | frozen prototype regression | **Complete** |
+| E1 | 12,600 controlled method–planner evaluations | **Complete** |
+| E2 | deterministic state perturbations | **Complete** |
+| E3 | 5,400 component-ablation trials | **Complete** |
+| E4 | configuration-only five-phase transfer | **Complete** |
+| E5 | IPC-3 Rovers public-topology stress test | **Complete** |
+| E6a | Satellite native-semantic pilot | **Complete pilot; insufficient selectivity** |
+| E6b | held-out native Rovers + cross-implementation oracle + Fast Downward + VAL | **PASS — run 37713826709** |
 
 ---
 
 # 4. Core results
 
-## E1 — definitive mechanism benchmark
+## E1 — controlled mechanism
 
 At `N=640, rho=0.05`:
 
 - blind search solved: GSC 30/30; Random-core 20/30; State-aware 0/30; Full-domain 0/30;
 - A* median generated nodes: GSC 4; Random-core 31; State-aware 308; Full-domain 612;
 - GSC semantic precision = recall = 1.000 across tested cells;
-- at `rho=1`, all methods converge as prespecified.
+- at `rho=1`, methods converge as prespecified.
 
-Interpretation: same-cardinality Random-core shows that the effect is not explained by action count alone.
+Same-cardinality Random-core is the key falsification: the effect is not explained by action count alone.
 
-## E3 — component ablations
+## E3 — component necessity
 
 Across 5,400 trials:
 
@@ -110,19 +116,19 @@ Across 5,400 trials:
 - without validator: 400/400 false allows;
 - without Readiness: 200/200 unnecessary planner calls in missing-capability/G0 cases;
 - without compile-time safety gating: safety-blocked case produces a plan in 100/100 trials and mean 1.99 invalid Provider–Action instances/trial enter the domain;
-- revision-only changes cause 100/100 false blocks under global freshness.
+- global freshness causes 100/100 false blocks under revision-only changes.
 
 ## E4 — configuration-only transfer
 
-Five-phase transfer configuration:
+Five-stage transfer configuration:
 
 `Locate → Inspect → MapAccess → Relay → DeliverAid`
 
-The generic runtime core SHA-256 remains unchanged and no domain-specific runtime branch is added. Across 800 trials/domain, decision-relevant false allow/block is 0/600 per domain; selected-provider-failure recovery is 66/66 when redundancy >=2.
+The generic runtime core SHA-256 remains unchanged and no domain-specific runtime branch is added. Across 800 trials/domain, decision-relevant false allow/block is 0/600 per domain; selected-provider-failure recovery is 66/66 when redundancy ≥2.
 
 ## E5 — public-topology stress test
 
-IPC-3 Rovers tasks 03/05/07; 1,800 runs; study-authored masks; separate clean-room planner.
+IPC-3 Rovers 03/05/07, 1,800 runs, study-authored masks, separate clean-room planner.
 
 At q=0, median generated-node reductions vs Full-domain are:
 
@@ -130,7 +136,7 @@ At q=0, median generated-node reductions vs Full-domain are:
 - task 05: 45.5%
 - task 07: 66.7%
 
-At q=1 the methods converge. E5 is classified as **public-topology stress test**, not final semantic external validation.
+At q=1 methods converge. E5 is **not** independent semantic validation.
 
 ---
 
@@ -140,31 +146,24 @@ At q=1 the methods converge. E5 is classified as **public-topology stress test**
 
 - holdout: IPC-3 Rovers p09–p20;
 - benchmark commit: `e21d49c2cb61d147a46c5966f2581bf6fd422b9f`;
-- no synthetic governance mask;
-- native PDDL capability/state semantics only;
-- Python compiler vs separately implemented Node.js/JavaScript recursive S-expression oracle;
+- no synthetic runtime governance mask;
+- native public PDDL capability/state semantics;
+- Python compiler path vs separately implemented JavaScript S-expression admission path;
 - Fast Downward 26.6, `--alias lama-first`, 300 s/run, 4 GiB/run;
 - VAL commit `3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4`;
-- returned GSC plans validated against original, unmodified public PDDL.
+- returned GSC plans validated against original unmodified public PDDL.
 
 ## Static/native-semantic evidence
 
 - rovers: 58/58 admitted;
 - cameras: 60/65 admitted;
 - stores: 47/58 admitted;
-- total provider-related objects: 165/181 admitted; **16/181 excluded = 8.84%**;
-- native mission-output goals: 136;
+- total: 165/181 admitted; **16/181 excluded = 8.84%**;
+- native goals: 136;
 - uncovered goals: 0;
 - cross-implementation admission mismatches: 0.
 
-## Confirmatory identity
-
-- GitHub Actions run: `37713826709`
-- head commit: `64c3f66cf95951fac180487b18a26d78e681507b`
-- artifact ID: `11522843338`
-- artifact ZIP SHA-256: `36fc77b08100eb655ab575c8ca1c70f6a349f373cf19d38994b6bfb9b814d5a8`
-
-## Frozen gate result
+## Confirmatory result
 
 | Criterion | Result |
 |---|---:|
@@ -181,15 +180,21 @@ At q=1 the methods converge. E5 is classified as **public-topology stress test**
 
 ## **E6b scientific status: PASS**
 
+Reproducibility identity:
+
+- GitHub Actions run `37713826709`;
+- artifact ID `11522843338`;
+- artifact ZIP SHA-256 `36fc77b08100eb655ab575c8ca1c70f6a349f373cf19d38994b6bfb9b814d5a8`.
+
 ---
 
 # 6. Mature-planner boundary result
 
-E6b's performance outcome is a clean null.
+E6b's secondary performance endpoint is a clean null.
 
 Full and GSC are identical in 12/12 pairs for:
 
-- translator variables, facts, operators, and task size;
+- translator variables/facts/operators/task size;
 - relevant atoms and necessary variables/operators;
 - landmark counts;
 - expanded states;
@@ -202,10 +207,10 @@ Across 12 pairs:
 - median generated states: Full = GSC = 4,863.5;
 - median expanded states: Full = GSC = 145;
 - median plan length: Full = GSC = 45;
-- median wall time: Full 0.1275 s, GSC 0.1246 s;
+- median wall time: Full 0.1275 s; GSC 0.1246 s;
 - GSC faster in 6/12 wall-time pairs and slower in 6/12.
 
-Mechanistic interpretation: Fast Downward translation/relevance preprocessing removes the same native-goal-irrelevant structures that GSC removes upstream. E5 and E6b therefore are not contradictory.
+Interpretation: Fast Downward translation/relevance preprocessing removes the same native-goal-irrelevant structures that GSC removes upstream. E5 and E6b are therefore not contradictory.
 
 **Computational claim:**
 
@@ -213,30 +218,47 @@ Mechanistic interpretation: Fast Downward translation/relevance preprocessing re
 
 ---
 
-# 7. Final literature/novelty refresh — 2026-10-08
+# 7. Current submission package — RAS
 
-Two September 2026 peer-reviewed neighbours were added to the working manuscript:
+**Primary target:** *Robotics and Autonomous Systems*.
 
-1. Jørgensen & Ma, *Information* 17(9):923, doi:10.3390/info17090923 — separates semantic validity, process admissibility, policy, delegated authority, controlled execution, and provenance around agent-proposed actions.
-2. An et al., *Sensors* 26(18):5973, doi:10.3390/s26185973 — carries ontology/SWRL reasoning into PDDL mission planning and continuous trajectory optimization for autonomous driving.
+Current authoritative full manuscript:
 
-These works narrow the novelty claim but do not trigger the novelty hard-stop. GSC does **not** claim ontology-to-PDDL integration, semantic validity, or governed execution in general as novel. The retained contribution is the mission-conditioned heterogeneous Provider–Action planning-domain membership boundary plus its direct mechanism and external evaluation.
+- `Paper1_Manuscript_v0.5.2_RAS.md`
+- Library: `/Tianshu/manuscript/Paper1_Manuscript_v0.5.2_RAS.md`
+- SHA-256: `031a556ea205d7cb54b2361e49380c5782330d33cb86410ba12610999d9f6253`
+
+RAS-facing state:
+
+- abstract: **235 words**;
+- keywords: **7**;
+- highlights: **5**, each **70–79 characters**, satisfying Elsevier's ≤85-character general highlight guidance;
+- current references: 19, all used in text and no missing citation numbers;
+- final 2026 literature refresh complete;
+- adversarial review complete: **no new experiment required**;
+- Data/Code Availability statement complete;
+- submission metadata package complete;
+- cover letter draft complete;
+- graphical-abstract brief complete;
+- submission checklist complete.
+
+GitHub manuscript assets:
+
+- `research/manuscript/Paper1_CURRENT_v1.0.md`
+- `research/manuscript/Paper1_v0.5.2_RAS_Compliance_Delta.md`
+- `research/manuscript/Paper1_RAS_Submission_Metadata_v1.0.md`
+- `research/manuscript/Paper1_Data_Code_Availability_v1.0.md`
+- `research/manuscript/Paper1_RAS_Highlights_v1.1.txt`
+- `research/manuscript/Paper1_RAS_Cover_Letter_v0.1.md`
+- `research/manuscript/Paper1_RAS_Graphical_Abstract_Brief_v1.0.md`
+- `research/manuscript/Paper1_RAS_Submission_Checklist_v1.0.md`
+- `research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md`
 
 ---
 
-# 8. Current manuscript package
+# 8. Figures
 
-GitHub:
-
-- `research/manuscript/Paper1_Manuscript_v0.4.md` — last complete full manuscript committed to GitHub;
-- `research/manuscript/Paper1_v0.4.1_Delta.md` — guarded-PDDL/oracle/selectivity corrections;
-- `research/manuscript/Paper1_v0.4.2_Literature_Citation_Delta.md` — final literature refresh;
-- `research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md` — citation audit;
-- `research/figures/Paper1_Figure_Table_Package_v1.0.md` — figure/table plan.
-
-Project Library contains the complete current full manuscript `Paper1_Manuscript_v0.4.2.md` and publication figures.
-
-Main figures are now frozen as:
+Main figure sequence is frozen:
 
 1. GSC architecture;
 2. E1 same-cardinality mechanism evidence;
@@ -244,26 +266,78 @@ Main figures are now frozen as:
 4. E6b native provider admission/selectivity;
 5. E6b mature-planner null.
 
----
+Current generator:
 
-# 9. Research stop rule and next action
+- `research/figures/generate_paper_figures_v1_1.py`
 
-**Paper 1 experimental program is closed.**
-
-No additional external benchmark should be added merely to recover a positive speedup. The mature-planner null is a valid boundary result and should remain visible.
-
-Next work package:
-
-1. integrate Figures 1–5 into the manuscript;
-2. reduce repeated numerical reporting across Abstract/Results/Discussion/Conclusion;
-3. complete final sentence-level reference-format normalization;
-4. choose/finalize target-venue formatting;
-5. generate DOCX/PDF only after explicit manuscript-content approval.
-
-A new experiment is justified only if a later reviewer identifies a concrete claim that cannot be supported or removed using the existing evidence.
+Figure philosophy: mechanism → public topology → external semantics → mature-planner boundary. The mature-planner null stays in the main paper.
 
 ---
 
-# 10. Evidence boundary
+# 9. Final literature/novelty position
+
+2026-10-08 literature refresh adds two particularly close recent neighbours:
+
+- Jørgensen & Ma (2026): bounded enterprise action governance;
+- An et al. (2026): ontology/SWRL → PDDL autonomous-driving mission planning.
+
+They narrow the novelty claim but do not trigger the novelty hard-stop.
+
+GSC does **not** claim ontology-to-PDDL integration, semantic validity, generic governed execution, or stale-plan validation in general as novel. The retained contribution is:
+
+> mission-conditioned heterogeneous Provider–Action planning-domain membership as a first-class governance boundary, together with direct mechanism testing and a held-out native-semantic external gate.
+
+---
+
+# 10. Data/code availability
+
+Recommended statement is maintained in:
+
+`research/manuscript/Paper1_Data_Code_Availability_v1.0.md`.
+
+The public repository contains frozen protocols, reproducibility workflows, E6b result summaries, and figure-generation scripts. Third-party benchmark/tool sources remain under their upstream repositories and licenses; this project records version-pinned identities and reproducible fetch/build paths rather than claiming redistribution ownership.
+
+The study contains no human-participant or animal data.
+
+---
+
+# 11. Remaining work before submission
+
+Scientific work remaining: **none**, unless a later reviewer identifies a specific unresolved claim–evidence gap.
+
+Submission work remaining:
+
+1. author names/order and affiliations;
+2. corresponding-author details;
+3. funding/grant statement;
+4. CRediT author contributions;
+5. competing-interest declaration;
+6. optional acknowledgements;
+7. final copy edit and reference-style normalization;
+8. final figure typography/layout check;
+9. decide whether to mint a repository release/DOI before submission;
+10. explicitly approve content before DOCX/PDF generation.
+
+---
+
+# 12. Evidence boundary
 
 All evidence remains software/formal-model, parameterized synthetic, or public planning-benchmark evidence. E4's second domain is synthetic; E5 masks are study-authored; E6b native semantics are not independently authored field safety/authorization labels; E6b selectivity is modest; global freshness is conservative; and no field-performance or physical-safety claim is made.
+
+---
+
+# 13. Changelog
+
+## v1.7 — 2026-10-08
+
+- Made v0.5.2 RAS the authoritative current manuscript.
+- Recorded full-manuscript SHA-256 and added `Paper1_CURRENT_v1.0.md`.
+- Added RAS submission metadata and Data/Code Availability statement.
+- Added publication figure generator v1.1.
+- Confirmed 235-word abstract, seven keywords, and five <=85-character Highlights.
+- Reconfirmed all 19 references are used with no missing citation numbers.
+- Moved project status from manuscript consolidation to **RAS submission preparation**.
+
+## v1.6 — 2026-10-08
+
+- E6b PASS, mature-planner null, literature refresh, adversarial review, figure freeze, and target-venue decision consolidated.
