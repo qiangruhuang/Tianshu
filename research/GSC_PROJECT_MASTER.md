@@ -2,9 +2,9 @@
 
 > **Paper 1:** Governed Semantic Domain Compilation for Heterogeneous Autonomous Mission Planning  
 > **Repository:** `https://github.com/qiangruhuang/Tianshu`  
-> **Master version:** v1.4  
+> **Master version:** v1.5.1  
 > **Last updated:** 2026-10-08  
-> **Current phase:** evidence closed; manuscript v0.4 integration and adversarial review  
+> **Current phase:** experimental program closed; v0.4.1 manuscript consolidation, figures/tables, sentence-level citation audit, and target-venue formatting  
 > **Role:** single source of truth for research status, claim boundaries, locked decisions, reproducibility, and next actions.
 
 ---
@@ -108,8 +108,8 @@ The contribution is intentionally narrower than:
 3. **Readiness, compile-time safety admission, freshness binding, post-plan validation, and rejection provenance are separable load-bearing mechanisms.**
 4. **The same generic runtime core transfers without a domain-specific branch** from the C-UAS fixture to a five-phase SAR/inspection configuration.
 5. **The E5 search-pollution effect is not confined to the original synthetic four-stage topology**, although E5 still uses study-authored masks and a clean-room planner.
-6. **E6b passes the frozen independent external-validity gate** using held-out public native semantics, an independent cross-implementation oracle, Fast Downward 26.6, and VAL.
-7. E6b supports **semantic soundness, solvability preservation, provider-exposure safety, and planner/validator independence** on the frozen Rovers holdout.
+6. **E6b passes the frozen independent external-validity gate** using held-out public native semantics, a cross-implementation oracle implemented independently from the compiler, Fast Downward 26.6, and VAL.
+7. E6b supports **semantic soundness, solvability preservation, non-admitted-provider exclusion, and planner/validator independence** on the frozen Rovers holdout.
 
 ## 3.2 Not supported
 
@@ -277,7 +277,7 @@ No admission rule was changed after inspection to manufacture pruning.
 - Benchmark commit: `e21d49c2cb61d147a46c5966f2581bf6fd422b9f`.
 - No synthetic runtime governance mask.
 - Admission based only on native public PDDL capability/state semantics.
-- Independent oracle: Python compiler path vs Node.js/JavaScript recursive S-expression implementation.
+- Cross-implementation oracle: Python compiler path vs an independently implemented Node.js/JavaScript recursive S-expression implementation.
 - Fast Downward: **26.6**.
 - Search configuration: `--alias lama-first`.
 - Resource cap: **300 s / 4 GiB per run**.
@@ -432,25 +432,31 @@ The planned external-validity evidence chain is closed.
 
 # 10. Current manuscript decision
 
-The next research phase is:
+The evidence program is closed. The current working manuscript state is:
 
-**Paper 1 v0.4 full-text integration → Claim–Evidence consistency audit → adversarial reviewer pass → submission-target formatting.**
+- full Markdown manuscript v0.4 completed and synchronized to GitHub;
+- local/Library v0.4.1 incorporates the explicit E6b planning-only guard implementation, cross-implementation-oracle terminology, external-selectivity limitation, and refreshed current references;
+- adversarial review completed with the verdict **minor-to-moderate manuscript revision; no new experiment required**;
+- focused 2026-10-08 novelty refresh completed; the novelty hard-stop was **not triggered**.
 
-Already added to GitHub:
+GitHub manuscript/review assets:
 
 - `research/E6b_Confirmatory_Interpretation_v1.0.md`
 - `research/manuscript/Paper1_v0.4_E6b_Integration_Guide.md`
 - `research/manuscript/Paper1_v0.3_to_v0.4_Claim_Evidence_Audit.md`
+- `research/manuscript/Paper1_Manuscript_v0.4.md`
+- `research/manuscript/Paper1_v0.4.1_Adversarial_Review.md`
+- `research/manuscript/Novelty_Refresh_2026-10-08.md`
 
-The v0.3 audit identifies stale passages that must change:
+The v0.4.x storyline is now frozen around:
 
-- E5 must be renamed from “external-validity gate” to **public-topology stress test**.
-- The Abstract must include E6b PASS and the mature-planner null.
-- The Methods must add an E6b subsection.
-- The Results must add a dedicated E6b PASS/null subsection.
-- Discussion must distinguish E5 search effects from E6b semantic external validity.
-- Threats must replace “Fast Downward replication remains desirable” with the observed mature-planner null.
-- Conclusion must stop listing third-party planner replication as future work.
+> **correct governed domain synthesis + conditional computational benefit**
+
+The next work package is:
+
+**publication-quality figures/tables from existing results → sentence-level claim/citation audit → target-venue formatting/language editing → explicit approval before DOCX/PDF generation.**
+
+No further benchmark should be added unless a later reviewer identifies a concrete claim that cannot be supported or removed using the existing evidence.
 
 ---
 
@@ -504,6 +510,22 @@ Primary manuscript guidance:
 ---
 
 # 14. Changelog
+
+## v1.5.1 — 2026-10-08
+
+- Tightened E6b terminology: the JavaScript path is a cross-implementation oracle, not independently authored policy ground truth.
+- Replaced ambiguous “provider-exposure safety” wording with “non-admitted-provider exclusion.”
+
+## v1.5 — 2026-10-08
+
+- Completed the full v0.4 Markdown manuscript integrating E6b PASS and the mature-planner null.
+- Added explicit E6b planning-only guarded-PDDL implementation details: static admitted-provider predicates are conjoined to action preconditions while original public PDDL remains the validation truth source.
+- Clarified that the JavaScript/Python oracle is cross-implementation independence, not independently authored policy ground truth.
+- Added the external-selectivity limitation: 16/181 provider-related objects excluded, with all 58 rovers admitted.
+- Updated the published Holmberg et al. IEEE BigData 2025 citation and current PlanFence arXiv v2 title.
+- Completed an adversarial reviewer audit; no new experiment is required.
+- Completed a focused 2026-10-08 novelty refresh; the novelty hard-stop was not triggered.
+- Froze the experimental program and moved the project to figures/tables, sentence-level citation audit, and target-venue formatting.
 
 ## v1.4 — 2026-10-08
 
