@@ -1,0 +1,6 @@
+{
+  "manifest_sha256_expected": "f3065f5e2c642be48c138bccd72a12e1a4dd32dd53fd03037ebb35571c90a0c2",
+  "manifest_sha256_observed": "f3065f5e2c642be48c138bccd72a12e1a4dd32dd53fd03037ebb35571c90a0c2",
+  "mismatch_count": 0,
+  "details": []
+}
