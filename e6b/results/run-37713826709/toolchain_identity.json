@@ -1,0 +1,8 @@
+{
+  "fast_downward_expected": "26.6",
+  "fast_downward_version_output": "Fast Downward 26.6\ngit revision [release]: 64c3f66",
+  "fast_downward_version_ok": true,
+  "val_expected_commit": "3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4",
+  "val_observed_commit": "3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4",
+  "val_binary_inside_verified_source_tree": true
+}
