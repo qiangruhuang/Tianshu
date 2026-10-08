@@ -1,45 +1,23 @@
-# Paper 1 — Current Authoritative Version
+# Paper 1 — Current Manuscript Manifest
 
-**Date:** 2026-10-08
+**Authoritative candidate:** `Paper1_Manuscript_v0.5.4_RAS.md`  
+**Date:** 2026-10-08  
+**SHA-256:** `817e3d4ab99441353246dc7d0e54a25c7fcb241279eed90aa71d74b56d0894aa`  
+**Target:** *Robotics and Autonomous Systems*
 
-## Current full manuscript
+## Scientific state
 
-`Paper1_Manuscript_v0.5.3_RAS.md`
+- experimental program closed;
+- E6b confirmatory external-validity gate: PASS;
+- mature-planner search effect on E6b: null;
+- no new experiment required by adversarial review.
 
-Library path used by the project workflow:
+## Submission additions in v0.5.4
 
-`/Tianshu/manuscript/Paper1_Manuscript_v0.5.3_RAS.md`
+- Elsevier-compatible generative-AI disclosure before References;
+- link to `Paper1_Supplementary_Material_v1.0.md`;
+- no scientific result or claim-boundary change.
 
-SHA-256 of the current full manuscript:
+## Freeze rule
 
-`3fa988a466c38f716c7ade29f1ecea01c9710a897b073b92831df4888e095f2f`
-
-## GitHub reconstruction path
-
-The repository contains the last committed full base manuscript plus explicit version deltas through v0.5.3. The current scientific state is summarized in `research/GSC_PROJECT_MASTER.md`, and the final pre-layout copy-edit verdict is in `research/manuscript/Paper1_RAS_Copyedit_Gate_v1.0.md`.
-
-Current deltas include:
-
-- v0.4.1 E6b guarded-PDDL / oracle / selectivity corrections;
-- v0.4.2 current-literature and citation update;
-- v0.4.3 figure-callout / submission-compression update;
-- v0.5 RAS-oriented presentation update;
-- v0.5.1 terminology audit;
-- v0.5.2 RAS submission-compliance update;
-- v0.5.3 pre-layout terminology and paragraph-flow copy edit.
-
-## Scientific status
-
-No experiment changed after E6b. The experimental program is closed.
-
-Final storyline:
-
-> **correct governed domain synthesis + conditional computational benefit**
-
-## Copy-edit status
-
-**PASS.** No scientific or structural rewrite remains justified.
-
-## Next justified work
-
-Author metadata, final reference-style normalization, figure/layout verification, optional repository release/DOI, and submission packaging only. DOCX/PDF generation remains gated on explicit manuscript-content approval.
+Any later change to methods, numerical results, gate thresholds, claim boundaries, or references must increment the manuscript version and update this SHA-256 manifest. Author metadata, journal portal fields, and purely typographic layout may be added without reopening the experimental program.
