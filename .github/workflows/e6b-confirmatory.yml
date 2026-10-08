@@ -67,8 +67,8 @@ jobs:
           git -C "$WORK_DIR/VAL" checkout --detach "$VAL_COMMIT"
           test "$(git -C "$WORK_DIR/VAL" rev-parse HEAD)" = "$VAL_COMMIT"
           cd "$WORK_DIR/VAL"
-          bash scripts/linux/build_linux64.sh
-          VAL_BIN="$(find build -type f \( -name Validate -o -name validate \) -perm -u+x | head -n 1)"
+          bash scripts/linux/build_linux64.sh all Release
+          VAL_BIN="$(find build/linux64/Release/bin -type f \( -name Validate -o -name validate \) -perm -u+x | head -n 1)"
           test -n "$VAL_BIN"
           printf '%s\n' "$WORK_DIR/VAL/$VAL_BIN" > "$OUT_DIR/val_binary_path.txt"
 
