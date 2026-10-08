@@ -13,11 +13,11 @@ permissions:
 
 jobs:
   frozen-e6b:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     timeout-minutes: 180
     env:
-      ASSET_DIR: ${{ runner.temp }}/e6b_assets
-      WORK_DIR: ${{ runner.temp }}/e6b_work
+      ASSET_DIR: ${{ github.workspace }}/.e6b_tmp/assets
+      WORK_DIR: ${{ github.workspace }}/.e6b_tmp/work
       OUT_DIR: ${{ github.workspace }}/e6b_confirmatory_results
       BENCH_COMMIT: e21d49c2cb61d147a46c5966f2581bf6fd422b9f
       VAL_COMMIT: 3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4
@@ -35,10 +35,10 @@ jobs:
       - name: Reconstruct byte-preserved frozen research bundle
         run: |
           mkdir -p "$ASSET_DIR" "$WORK_DIR" "$OUT_DIR"
-          cat e6b/bundle_parts/part-*.b64 > "$RUNNER_TEMP/e6b_bundle.b64"
-          base64 --decode "$RUNNER_TEMP/e6b_bundle.b64" > "$RUNNER_TEMP/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip"
-          echo "8ff25602bcabc58eed52b781d882d51966dd02dc28b02ebf77db1166ca59d9ac  $RUNNER_TEMP/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" | sha256sum -c -
-          unzip -q "$RUNNER_TEMP/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" -d "$ASSET_DIR"
+          cat e6b/bundle_parts/part-*.b64 > "$GITHUB_WORKSPACE/.e6b_tmp/e6b_bundle.b64"
+          base64 --decode "$GITHUB_WORKSPACE/.e6b_tmp/e6b_bundle.b64" > "$GITHUB_WORKSPACE/.e6b_tmp/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip"
+          echo "8ff25602bcabc58eed52b781d882d51966dd02dc28b02ebf77db1166ca59d9ac  $GITHUB_WORKSPACE/.e6b_tmp/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" | sha256sum -c -
+          unzip -q "$GITHUB_WORKSPACE/.e6b_tmp/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" -d "$ASSET_DIR"
           cd "$ASSET_DIR"
           sha256sum -c E6b_ARTIFACTS_SHA256.txt
           python3 -m py_compile run_e6b_external_validity_gate_v1_1.py
