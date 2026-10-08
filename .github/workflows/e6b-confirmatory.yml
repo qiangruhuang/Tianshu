@@ -40,7 +40,7 @@ jobs:
           echo "8ff25602bcabc58eed52b781d882d51966dd02dc28b02ebf77db1166ca59d9ac  $GITHUB_WORKSPACE/.e6b_tmp/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" | sha256sum -c -
           unzip -q "$GITHUB_WORKSPACE/.e6b_tmp/E6b_External_Validity_Gate_Research_Bundle_v1.1.zip" -d "$ASSET_DIR"
           cd "$ASSET_DIR"
-          sha256sum -c E6b_ARTIFACTS_SHA256.txt
+          sed 's#  /mnt/data/#  #' E6b_ARTIFACTS_SHA256.txt | sha256sum -c -
           python3 -m py_compile run_e6b_external_validity_gate_v1_1.py
           node --check generate_e6b_independent_oracle.mjs
 
