@@ -2,10 +2,10 @@
 
 > **Paper 1:** Governed Semantic Domain Compilation for Heterogeneous Autonomous Mission Planning  
 > **Repository:** `https://github.com/qiangruhuang/Tianshu`  
-> **Master version:** v1.8  
-> **Last updated:** 2026-10-08  
-> **Current phase:** RAS pre-submission package frozen; human author metadata / immutable release decision / final portal packaging pending  
-> **Current full manuscript:** `Paper1_Manuscript_v0.5.4_RAS.md`  
+> **Master version:** v1.9  
+> **Last updated:** 2026-10-09  
+> **Current phase:** RAS manuscript narrative finalized with anti-defensive + Nature-style restructuring; human author metadata / immutable release decision / final portal packaging pending  
+> **Current full manuscript:** `Paper1_Manuscript_v0.6.0_RAS_AntiDefensive_Nature.md`  
 > **Role:** single source of truth for research status, claim boundaries, reproducibility, and submission state.
 
 ---
@@ -27,7 +27,24 @@
 
 **Research question:** when a system knows many possible providers and actions, which Provider–Action instances should be admitted into the planner for this mission, under the current state and policy, before search begins?
 
-GSC treats **mission-conditioned Provider–Action domain membership** as an explicit governance artifact between persistent semantic knowledge and planner search.
+GSC treats **mission-conditioned Provider–Action domain membership** as an explicit governance artifact between persistent semantic knowledge and planner search:
+
+```text
+Persistent semantics + mission + current operational state
+                         ↓
+                Mission Snapshot
+                         ↓
+                    Readiness
+                         ↓
+                 GSC Compiler
+        admitted Provider–Action domain
+        + rejection provenance
+        + snapshot/revision/hash binding
+                         ↓
+                     Planner
+                         ↓
+                    Validator
+```
 
 **Final storyline:**
 
@@ -113,24 +130,30 @@ The generic runtime core SHA-256 remains unchanged and no domain-specific runtim
 
 IPC-3 Rovers 03/05/07, 1,800 runs, study-authored masks, separate clean-room planner.
 
-At q=0, median generated-node reductions vs Full-domain are 38.5%, 45.5%, and 66.7% on tasks 03, 05, and 07. At q=1 methods converge. E5 is **not** independent semantic validation.
+At q=0, median generated-node reductions vs Full-domain are:
+
+- task 03: 38.5%
+- task 05: 45.5%
+- task 07: 66.7%
+
+At q=1 methods converge. E5 is **not** independent semantic validation.
 
 ---
 
 # 5. E6b confirmatory external-validity gate
 
-Frozen design:
+## Frozen design
 
 - holdout: IPC-3 Rovers p09–p20;
 - benchmark commit: `e21d49c2cb61d147a46c5966f2581bf6fd422b9f`;
 - no synthetic runtime governance mask;
 - native public PDDL capability/state semantics;
-- Python compiler path vs separately implemented JavaScript admission path;
+- Python compiler path vs separately implemented JavaScript S-expression admission path;
 - Fast Downward 26.6, `--alias lama-first`, 300 s/run, 4 GiB/run;
 - VAL commit `3c7a1f330bdab0ba28a4762bb45c3f06c27fb6d4`;
-- GSC plans validated against original unmodified public PDDL.
+- returned GSC plans validated against original unmodified public PDDL.
 
-Static/native-semantic evidence:
+## Static/native-semantic evidence
 
 - rovers: 58/58 admitted;
 - cameras: 60/65 admitted;
@@ -140,7 +163,7 @@ Static/native-semantic evidence:
 - uncovered goals: 0;
 - cross-implementation admission mismatches: 0.
 
-Confirmatory result:
+## Confirmatory result
 
 | Criterion | Result |
 |---|---:|
@@ -169,7 +192,15 @@ Reproducibility identity:
 
 E6b's secondary performance endpoint is a clean null.
 
-Full and GSC are identical in 12/12 pairs for translator variables/facts/operators/task size, relevant atoms/necessary variables/operators, landmark counts, expanded/generated states, plan length, and final `sas_plan` bytes.
+Full and GSC are identical in 12/12 pairs for:
+
+- translator variables/facts/operators/task size;
+- relevant atoms and necessary variables/operators;
+- landmark counts;
+- expanded states;
+- generated states;
+- plan length;
+- final `sas_plan` bytes.
 
 Across 12 pairs:
 
@@ -179,7 +210,11 @@ Across 12 pairs:
 - median wall time: Full 0.1275 s; GSC 0.1246 s;
 - GSC faster in 6/12 wall-time pairs and slower in 6/12.
 
-**Computational claim:** semantic admission can reduce search pollution when irrelevant structure survives planner preprocessing. It is not a planner-independent complexity reduction.
+Interpretation: Fast Downward translation/relevance preprocessing removes the same native-goal-irrelevant structures that GSC removes upstream. E5 and E6b are therefore not contradictory.
+
+**Computational claim:**
+
+> Semantic admission can reduce search pollution when irrelevant structure survives planner preprocessing. It is not a planner-independent complexity reduction.
 
 ---
 
@@ -189,34 +224,47 @@ Across 12 pairs:
 
 Current authoritative full manuscript:
 
-- `Paper1_Manuscript_v0.5.4_RAS.md`
-- v0.5.4 adds the Elsevier-required generative-AI declaration and a pointer to the frozen supplementary/reproducibility package; scientific content is unchanged.
+- `Paper1_Manuscript_v0.6.0_RAS_AntiDefensive_Nature.md`
+- SHA-256: `7d20b5f09a0f335834fb1a2fcc92460de7f13a789ce796f5ba6c13bf6dee2298`
+- v0.6.0 applies anti-defensive-writing, Nature-style argument restructuring, and Nature-style language polishing while preserving all experiments, numbers, frozen gates, references, and claim boundaries.
 
 RAS-facing state:
 
 - abstract: **236 words**;
 - keywords: **7**;
-- highlights: **5**, each within Elsevier's ≤85-character general guidance;
+- highlights: **5**, each **70–79 characters**, satisfying Elsevier's ≤85-character general highlight guidance;
 - current references: 19, all used in text and no missing citation numbers;
 - final 2026 literature refresh complete;
 - adversarial review complete: **no new experiment required**;
 - pre-layout copy-edit gate: **PASS**;
 - Data/Code Availability statement complete;
-- cover letter and graphical-abstract brief complete;
+- submission metadata package complete;
+- cover letter draft complete;
+- graphical-abstract brief complete;
 - submission checklist complete;
 - supplementary/reproducibility material complete;
 - author/declaration packet complete with unresolved human metadata explicitly marked;
 - generative-AI disclosure inserted in the candidate manuscript;
 - pre-submission immutable-release manifest prepared.
 
-GitHub manuscript assets now include:
+GitHub manuscript assets:
 
-- `research/manuscript/Paper1_Manuscript_v0.5.4_RAS.md`
+- `research/manuscript/Paper1_CURRENT_v1.2.md`
+- `research/manuscript/Paper1_v0.5.2_RAS_Compliance_Delta.md`
+- `research/manuscript/Paper1_v0.5.3_Copyedit_Delta.md`
+- `research/manuscript/Paper1_RAS_Copyedit_Gate_v1.0.md`
+- `research/manuscript/Paper1_RAS_Submission_Metadata_v1.0.md`
+- `research/manuscript/Paper1_Data_Code_Availability_v1.0.md`
+- `research/manuscript/Paper1_RAS_Highlights_v1.1.txt`
+- `research/manuscript/Paper1_RAS_Cover_Letter_v0.1.md`
+- `research/manuscript/Paper1_RAS_Graphical_Abstract_Brief_v1.0.md`
+- `research/manuscript/Paper1_RAS_Submission_Checklist_v1.0.md`
+- `research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md`
+- `research/manuscript/Paper1_Manuscript_v0.6.0_RAS_AntiDefensive_Nature.md`
+- `research/manuscript/Paper1_v0.6.0_AntiDefensive_Nature_Rewrite_Audit.md`
 - `research/manuscript/Paper1_Supplementary_Material_v1.0.md`
 - `research/manuscript/Paper1_RAS_Declarations_Author_Metadata_v1.0.md`
 - `research/manuscript/Paper1_PreSubmission_Release_Manifest_v1.0.md`
-- `research/manuscript/Paper1_RAS_Submission_Compliance_Gate_v1.0.md`
-- `research/manuscript/Paper1_Claim_Evidence_Citation_Audit_v1.0.md`
 
 ---
 
@@ -230,25 +278,50 @@ Main figure sequence is frozen:
 4. E6b native provider admission/selectivity;
 5. E6b mature-planner null.
 
-Submission figure sources are generated as PNG previews plus PDF/EPS vector files by `research/figures/generate_paper_figures_v1_2.py` and have passed render-back visual inspection.
+Current generator:
+
+- `research/figures/generate_paper_figures_v1_2.py`
+
+Submission figure sources are generated as PNG previews plus **PDF/EPS vector files** and have passed render-back visual inspection.
+
+Figure philosophy: mechanism → public topology → external semantics → mature-planner boundary. The mature-planner null stays in the main paper.
 
 ---
 
-# 9. Data/code and AI transparency
+# 9. Final literature/novelty position
 
-The public repository contains frozen protocols, reproducibility workflows, E6b result summaries, and figure-generation scripts. Third-party benchmark/tool sources remain under their upstream repositories and licenses.
+2026-10-08 literature refresh adds two particularly close recent neighbours:
 
-Elsevier's current policy requires disclosure when generative AI makes substantive contributions to manuscript wording or organization. The v0.5.4 candidate therefore includes a declaration that OpenAI ChatGPT was used for literature triage, manuscript organization/language refinement, code review, reproducibility documentation, and figure-script preparation, with all scientific decisions, executable results, verification, interpretation, and final content under human author responsibility.
+- Jørgensen & Ma (2026): bounded enterprise action governance;
+- An et al. (2026): ontology/SWRL → PDDL autonomous-driving mission planning.
 
-No general-purpose generative image model is used for the graphical abstract.
+They narrow the novelty claim but do not trigger the novelty hard-stop.
+
+GSC does **not** claim ontology-to-PDDL integration, semantic validity, generic governed execution, or stale-plan validation in general as novel. The retained contribution is:
+
+> mission-conditioned heterogeneous Provider–Action planning-domain membership as a first-class governance boundary, together with direct mechanism testing and a held-out native-semantic external gate.
 
 ---
 
-# 10. Remaining work before submission
+# 10. Data/code availability
+
+Recommended statement is maintained in:
+
+`research/manuscript/Paper1_Data_Code_Availability_v1.0.md`.
+
+The public repository contains frozen protocols, reproducibility workflows, E6b result summaries, and figure-generation scripts. Third-party benchmark/tool sources remain under their upstream repositories and licenses; this project records version-pinned identities and reproducible fetch/build paths rather than claiming redistribution ownership.
+
+The study contains no human-participant or animal data.
+
+---
+
+# 11. Remaining work before submission
 
 Scientific work remaining: **none**, unless a later reviewer identifies a specific unresolved claim–evidence gap.
 
-The scientific/reproducibility package is now frozen. Remaining items require human author decisions:
+Submission work remaining:
+
+The scientific/reproducibility package is now frozen. Remaining items require human author decisions rather than additional research:
 
 1. author names/order and affiliations;
 2. corresponding-author details;
@@ -256,20 +329,31 @@ The scientific/reproducibility package is now frozen. Remaining items require hu
 4. CRediT author contributions;
 5. competing-interest declaration;
 6. optional acknowledgements;
-7. all authors approve the AI-use declaration;
-8. decide whether to mint an immutable repository release/DOI;
-9. perform the final live RAS portal requirement check;
-10. explicitly approve content before DOCX/PDF manuscript generation.
+7. decide whether to mint a repository release/DOI before submission;
+8. perform the final live RAS portal requirement check;
+9. explicitly approve content before DOCX/PDF manuscript generation.
+
+Reference punctuation/house-style normalization is not a hard blocker under Elsevier's current Your Paper Your Way guidance; figure source-format compliance is complete with EPS/PDF outputs.
 
 ---
 
-# 11. Evidence boundary
+# 12. Evidence boundary
 
 All evidence remains software/formal-model, parameterized synthetic, or public planning-benchmark evidence. E4's second domain is synthetic; E5 masks are study-authored; E6b native semantics are not independently authored field safety/authorization labels; E6b selectivity is modest; global freshness is conservative; and no field-performance or physical-safety claim is made.
 
 ---
 
-# 12. Changelog
+# 13. Changelog
+
+## v1.9 — 2026-10-09
+
+- Applied the user-requested anti-defensive-writing skill and Nature writing/polishing workflow to the full manuscript.
+- Reorganized the paper around the strongest defensible value: mission-conditioned Provider–Action membership as an auditable runtime contract.
+- Removed reviewer-facing self-audit and defensive novelty disclaimers while preserving all conclusion-changing evidence and scope boundaries.
+- Reframed the E6b mature-planner null as the mechanism boundary created by downstream planner preprocessing.
+- Replaced the long Threats-to-validity inventory with claim-specific `Scope of inference`.
+- Completed claim/evidence/reference regression and submission-layout QA; no scientific result changed.
+- Promoted `Paper1_Manuscript_v0.6.0_RAS_AntiDefensive_Nature.md` as the current writing candidate.
 
 ## v1.8 — 2026-10-08
 
@@ -277,11 +361,37 @@ All evidence remains software/formal-model, parameterized synthetic, or public p
 - Added Elsevier-compatible generative-AI disclosure immediately before References.
 - Added `Paper1_Supplementary_Material_v1.0.md` with frozen E1/E3/E4/E5 details and the 12-instance E6b paired table.
 - Added a human-signoff declarations/author-metadata packet covering CRediT, funding, COI, ethics, data/code, and AI use.
-- Added a pre-submission release manifest; no immutable release/DOI has been minted yet.
+- Added a pre-submission release manifest with SHA-256 identities; no immutable release/DOI has been minted yet.
 - Confirmed current Elsevier policy: substantive generative-AI manuscript assistance should be disclosed; AI-generated graphical abstracts are not used in this project.
-- Remaining blockers are exclusively human metadata, release/DOI decision, portal check, and explicit approval before DOCX/PDF generation.
+- Remaining blockers are now exclusively human metadata, release/DOI decision, portal check, and explicit approval before DOCX/PDF generation.
 
 ## v1.7.2 — 2026-10-08
 
-- Completed RAS/Elsevier submission-compliance gate and publication figure-source checks.
-- Remaining blockers reduced to author/funding/CRediT/COI metadata, optional repository release/DOI, and final live portal packaging.
+- Completed RAS/Elsevier submission-compliance gate: PASS with author-metadata blockers only.
+- Downgraded reference house-style normalization from pre-submission blocker to live-portal/proof-stage check under Your Paper Your Way.
+- Upgraded figure generator to v1.2 with PNG preview + PDF/EPS vector outputs.
+- Rendered all five PDF figures back to images and visually verified them.
+- Added submission checklist v1.1.
+- Current remaining blockers are author/funding/CRediT/COI metadata, optional repository release/DOI, and final live portal packaging.
+
+## v1.7.1 — 2026-10-08
+
+- Promoted v0.5.3 RAS to authoritative pre-layout candidate.
+- Copy-edit gate PASS: no scientific or structural rewrite required.
+- Standardized E6b as confirmatory external-validity gate and cross-implementation admission oracle.
+- Integrated the isolated Figure 1 callout; no method/result/claim changes.
+- Updated authoritative manuscript SHA-256 and Abstract count to 236 words.
+
+## v1.7 — 2026-10-08
+
+- Made v0.5.2 RAS the authoritative current manuscript.
+- Recorded full-manuscript SHA-256 and added `Paper1_CURRENT_v1.2.md`.
+- Added RAS submission metadata and Data/Code Availability statement.
+- Added publication figure generator v1.1.
+- Confirmed 235-word abstract, seven keywords, and five <=85-character Highlights.
+- Reconfirmed all 19 references are used with no missing citation numbers.
+- Moved project status from manuscript consolidation to **RAS submission preparation**.
+
+## v1.6 — 2026-10-08
+
+- E6b PASS, mature-planner null, literature refresh, adversarial review, figure freeze, and target-venue decision consolidated.
